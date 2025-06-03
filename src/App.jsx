@@ -1,28 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [myval, setMyval] = useState(0);
 
-  const myInc = () => {
-    setCount(count + 1);
-  };
-
-  const myDecre = () => {
-    if (count === 0) {
-      alert("No Decrement");
-    } else {
-      setCount(count - 1);
-    }
-  };
+  useEffect(() => {   {/* useEffect ek method h jo render hone pr chlega  */}
+   setTimeout(() => {
+      setMyval(myval + 1);
+    }, 5000);
+  });
 
   return (
     <>
-      <h1>Counter App:</h1>
-      <button onClick={myInc}>Increment</button>
-      <h1>{count}</h1>
-      <button onClick={myDecre}>Decrement</button>
+      <h1>Welcome to my App : {myval}</h1>    
     </>
   );
 };
 
 export default App;
+
+
+//useEffect ek hook h usme ek callbackfunction diya jata h as a parameter or ye chlega jitni m
+/*In React, the useEffect Hook is essential for managing side effects in functional components. Side effects are operations that interact with external systems or affect components outside the scope of the current function, such as:
+
+Fetching data from APIs
+
+Setting up subscriptions or event listeners
+
+Manipulating the DOM directly
+
+Starting and clearing timers 
+
+No dependency array: The effect runs after every render.*/
