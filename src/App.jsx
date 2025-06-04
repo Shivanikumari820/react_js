@@ -1,9 +1,11 @@
-import { useState } from "react";
+//  FORM HANDLING in React 
+ 
+ import { useState } from "react";
 
 const App = () => {
   // ek hi usestate bnakr sbka kaam hojaye sbke liye alg alg na bnana pde , ek hi input sbke liye kaam
   const [formData, setFormData] = useState({rollno: "", name: "", city: "", fees: ""  });
-  
+
 const handleChange = (e) => {
   // const { name, value } = e.target; // shortcut way (destructuring)
 
