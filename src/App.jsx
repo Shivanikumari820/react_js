@@ -1,33 +1,29 @@
 import { useState, useEffect } from "react";
 
 const App = () => {
-  const [myval, setMyval] = useState(0);
+  const [count, setCount] = useState(0);
+  const [multi, setMulti] = useState(0);
 
-  useEffect(() => {   {/* useEffect ek method h jo render hone pr chlega  */}
-   setTimeout(() => {
-      setMyval(myval + 1);         {/* isse ye chlta rhega isko slow krne k liye hi setTimeout use kiya */}
-    }, 5000);
-  });
+
+  useEffect(() => {                  
+      setMulti(count * 2);              {/* ye useEffect dependency change hone pr chlegi 3rd type of useEffect h ye  */}
+  },[count]);                           {/* useEffect's second argument ([count]) is called the dependency array. It tells React: "Only run this effect when count changes." */}
 
   return (
     <>
-      <h1>Welcome to my App : {myval}</h1>    
+      <h1>Welcome to my App</h1>    
+      <button onClick={() => {setCount(count+1)}}>Click here</button>
+    <h3>count is:   {count}</h3>
+    <h4>Multiplication : {multi}</h4>
     </>
   );
 };
 
 export default App;
 
+/*
+This useEffect is the 3rd type (runs only when count changes):
 
-//useEffect ek hook h usme ek callbackfunction diya jata h as a parameter or ye chlega jitni m
-/*In React, the useEffect Hook is essential for managing side effects in functional components. Side effects are operations that interact with external systems or affect components outside the scope of the current function, such as:
+Every time the value of count changes, this code inside useEffect runs.
 
-Fetching data from APIs
-
-Setting up subscriptions or event listeners
-
-Manipulating the DOM directly
-
-Starting and clearing timers 
-
-No dependency array: The effect runs after every render.*/
+It updates multi to be count * 2. */
