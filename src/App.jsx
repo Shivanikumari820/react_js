@@ -5,7 +5,7 @@ const App = () => {
 
   useEffect(() => {   {/* useEffect ek method h jo render hone pr chlega  */}
    setTimeout(() => {
-      setMyval(myval + 1);
+      setMyval(myval + 1);         {/* isse ye chlta rhega isko slow krne k liye hi setTimeout use kiya */}
     }, 5000);
   });
 
