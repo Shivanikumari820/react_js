@@ -3,12 +3,6 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Insert from "./pages/insert";
 import Display from "./pages/Display";
-// import Contact from "./pages/Contact";
-
-
-
-
-
 
 const App = () => {
   return (
