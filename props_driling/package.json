@@ -1,5 +1,5 @@
 {
-  "name": "shivaniapp",
+  "name": "props_driling",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,10 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.9.0",
-    "bootstrap": "^5.3.6",
     "react": "^19.1.0",
-    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.2"
   },
